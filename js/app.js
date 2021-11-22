@@ -1,34 +1,8 @@
 const apikey = "2debe0f00b477f3d87075013e384ea67";
 const main = document.querySelector("main")
-const pagelimit = 10
-
-const date = new Date().valueOf()
-//const currentdate = new Date(`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`)
-console.log(date);
+const pages = 10
 
 
-
-const getlanguages = async () => {
-    try {
-
-        const api = await axios.get(`https://api.themoviedb.org/3/configuration/languages?api_key=${apikey}`)
-        if (api.status === 200)
-            return await api.data
-
-    } catch (error) {
-        console.log(error);
-
-    }
-}
-
-const generatelanguage = async () => {
-    const avaiablelang = await getlanguages()
-    avaiablelang.forEach(element => {
-
-        document.querySelector("#lang").innerHTML += `<option label="${element.english_name}" value="${element.iso_639_1}" ${element.iso_639_1 === "en" ? selected = "selected" : ""} ></option>\n`
-    });
-}
-generatelanguage()
 
 
 
@@ -53,7 +27,7 @@ const fetchmovies = async ({ pageno, sortby }) => {
 const displaydata = async (event) => {
     main.innerHTML = ""
 
-    for (let index = 1; index <= pagelimit; ++index) {
+    for (let index = 1; index <= pages; ++index) {
         const data = await fetchmovies({
             pageno: index
         })
@@ -94,40 +68,5 @@ const generateblock = ({ title, releaseat, imgsrc, like, view, id }) => {
 }
 
 
-
-const getlang = async () => {
-    try {
-        const lang = document.querySelector("#language").value
-        console.log(lang);
-        main.innerHTML = ""
-        for (let index = 1; index <= pagelimit; ++index) {
-
-            const api = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&page=${index}`)
-
-            const data = await api.data.results
-            const filterdata = data.filter(ele => ele.original_language === lang)
-            filterdata.forEach(element => {
-
-
-                document.querySelector("main").innerHTML += generateblock(
-                    {
-                        title: element.original_title,
-                        releaseat: element.release_date,
-                        id: element.id,
-                        imgsrc: element.backdrop_path,
-                        like: element.vote_average,
-                        view: element.vote_count
-
-                    }
-                )
-            });
-        }
-
-    } catch (error) {
-
-    }
-
-
-}
 
 window.onload = () => displaydata()

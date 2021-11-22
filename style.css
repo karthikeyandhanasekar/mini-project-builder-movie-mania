@@ -1,0 +1,134 @@
+* {
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    list-style-type: none;
+    text-decoration: none;
+    color          : black;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary  : #F5F5F5;
+    --bodycolor: #778898;
+}
+
+header,
+header div,
+.navcontainer,
+.navcontainer div nav ul {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    font-size      : 1.1em;
+
+}
+
+
+
+header {
+    background-color: var(--primary);
+    padding         : 1%;
+}
+
+header div img {
+    height: 5vh;
+}
+
+.logo {
+    width: 10%;
+}
+
+.navcontainer {
+    margin-right: 10%;
+    width       : 30%;
+
+}
+
+.navcontainer div {
+    justify-content: flex-end;
+
+}
+
+.navcontainer div input {
+    font-size: 1.1em;
+
+    width           : 12vw;
+    padding         : 5%;
+    border          : none;
+    border-bottom   : groove;
+    background-color: transparent;
+}
+
+.navcontainer div nav ul li {
+    margin-left: 5%;
+    cursor: pointer;
+
+}
+
+
+main {
+    background-color     : var(--bodycolor);
+    display              : grid;
+    grid-template-columns: repeat(3, minmax(auto, 30%));
+    gap                  : 5%;
+    padding              : 2%;
+    overflow             : scroll;
+    height               : 90vh;
+}
+
+main div {
+    display       : flex;
+    flex-direction: column;
+
+    padding-left: 2%;
+
+    background-color: var(--primary);
+    font-size       : 1.1em;
+    cursor: pointer;
+
+}
+
+.title {
+    font-size : 2em;
+    margin-top: 1%;
+
+}
+
+.releaseat {
+    color: #808080;
+}
+
+main div img {
+    width : 95%;
+    height: 70%;
+}
+
+.releaseat {
+    margin-bottom: 5%;
+}
+
+.likeview {
+    flex-direction: row;
+
+
+    width        : 100%;
+    padding-left : 0;
+    margin-bottom: 5%;
+    margin-top   : 5%;
+
+}
+
+.likeview span {
+    margin-right: 20%;
+    font-size   : 1.1em;
+
+    width: fit-content;
+}

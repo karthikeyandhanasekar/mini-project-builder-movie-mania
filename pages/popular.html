@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Mainia</title>
-    <link rel="stylesheet" href="style.css">
+    <title></title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="icon.png" alt="ProGrad">
+            <img src="../icon.png" alt="ProGrad">
             <h4>ProGrad</h4>
         </div>
         <div class="navcontainer">
             <div>
-                <input list="lang" placeholder="Lang" name="lang" id="language"  onsubmit="return getlang()"  onchange="return getlang()">
+                <input list="lang" placeholder="Lang" name="lang" id="language" onchange="return getlang()">
                 <datalist id="lang"  >
                     
                 </datalist>
@@ -26,9 +26,10 @@
                 <nav>
                     <ul>
 
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="pages/popular.html">Popular</a></li>
-                        <li><a href="pages/upcomming.js">Upcomming</a></li>
+                     
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="popular.html">Popular</a></li>
+                        <li><a href="upcomming.js">Upcomming</a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,7 +38,7 @@
 
     </header>
 
-    <main>
+    <main id="popular">
       
     </main>
 
@@ -45,7 +46,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script src="js/app.js"></script>
+    <script src="../js/popular.js"></script>
 </body>
 
 </html>

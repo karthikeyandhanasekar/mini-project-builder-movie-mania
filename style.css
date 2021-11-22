@@ -10,8 +10,8 @@
 ::-webkit-scrollbar {
     display: none;
 }
-html
-{
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -69,7 +69,7 @@ header div img {
 
 .navcontainer div nav ul li {
     margin-left: 5%;
-    cursor: pointer;
+    cursor     : pointer;
 
 }
 
@@ -92,7 +92,7 @@ main div {
 
     background-color: var(--primary);
     font-size       : 1.1em;
-    cursor: pointer;
+    cursor          : pointer;
 
 }
 
@@ -131,4 +131,44 @@ main div img {
     font-size   : 1.1em;
 
     width: fit-content;
+}
+
+.moviedetail {
+    display: flex;
+}
+
+.poster {
+    background-color: transparent;
+    display         : flex;
+    justify-content : center;
+}
+
+.details {
+    width       : 80%;
+    padding     : 2%;
+    text-align  : justify;
+    line-height : 2em;
+    word-spacing: 1em;
+    overflow: scroll;
+}
+
+.movietitle {
+    margin-bottom: 2%;
+}
+
+.overview {
+    font-size: 1.5em;
+}
+
+.moviedetail p {
+    margin-bottom: 2%;
+    font-size    : 1.5em;
+}
+
+.hidelang {
+    display: none;
+}
+
+.navcontainer div nav ul li :visited {
+    border: solid red;
 }

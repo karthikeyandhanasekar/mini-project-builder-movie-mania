@@ -1,6 +1,4 @@
-const apikey = "2debe0f00b477f3d87075013e384ea67";
 const main = document.querySelector("main")
-const pages = 10
 
 
 
@@ -38,7 +36,7 @@ const displaydata = async (event) => {
 
             document.querySelector("main").innerHTML += generateblock(
                 {
-                    title: element.original_title,
+                    title: element.title,
                     releaseat: element.release_date,
                     id: element.id,
                     imgsrc: element.backdrop_path,
@@ -52,21 +50,5 @@ const displaydata = async (event) => {
     }
 
 }
-
-
-const generateblock = ({ title, releaseat, imgsrc, like, view, id }) => {
-
-    return `<div class="movie" id=${id} onclick="return moviedetail(this.id)">
-    <h4 class="title" >${title}</h4>
-    <p class="releaseat">Released : ${releaseat}</p>
-    <img src="https://image.tmdb.org/t/p/w500/${imgsrc}" alt="${title}" loading="lazy" >
-    <div class="likeview">
-        <span class="like">❤ ${like}</span>
-        <span class="views">👁 ${view}</span>
-    </div>`
-
-}
-
-
 
 window.onload = () => displaydata()

@@ -52,10 +52,7 @@ const getlang = async () => {
         console.log(error);
 
     }
-
-
 }
-const moviedetail= (id) =>
-{
+const moviedetail = (id) => {
     console.log(id);
 }

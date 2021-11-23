@@ -96,54 +96,12 @@ const generateblock = ({ title, releaseat, imgsrc, like, view, id }) => {
 const moviedetail = async (id) => {
 
     try {
-        window.location.href=`../pages/moviedetails.html?movieid=${id}`
+        window.open(`moviedetails.html?movieid=${id}`)
     } catch (error) {
         console.log(error);
     }
 }
 generatelanguage()
-/*
-adult: false
-backdrop_path: "/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg"
-belongs_to_collection:
-backdrop_path: "/xfKot7lqaiW4XpL5TtDlVBA9ei9.jpg"
-id: 263
-name: "The Dark Knight Collection"
-poster_path: "/l4T8JVwircGZlZuSl29U3TS9mpl.jpg"
-[[Prototype]]: Object
-budget: 185000000
-genres: Array(4)
-0: {id: 18, name: 'Drama'}
-1: {id: 28, name: 'Action'}
-2: {id: 80, name: 'Crime'}
-3: {id: 53, name: 'Thriller'}
-length: 4
-[[Prototype]]: Array(0)
-homepage: "https://www.warnerbros.com/movies/dark-knight/"
-id: 155
-imdb_id: "tt0468569"
-original_language: "en"
-original_title: "The Dark Knight"
-overview: "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker."
-popularity: 72.831
-poster_path: "/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
-production_companies: (6) [{…}, {…}, {…}, {…}, {…}, {…}]
-production_countries: (2) [{…}, {…}]
-release_date: "2008-07-14"
-revenue: 1004558444
-runtime: 152
-spoken_languages: Array(2)
-0: {english_name: 'English', iso_639_1: 'en', name: 'English'}
-1: {english_name: 'Mandarin', iso_639_1: 'zh', name: '普通话'}
-length: 2
-[[Prototype]]: Array(0)
-status: "Released"
-tagline: "Why So Serious?"
-title: "The Dark Knight"
-video: false
-vote_average: 8.5
-vote_count: 26233*/
-
 
 const searchmovie = async () => {
     try {

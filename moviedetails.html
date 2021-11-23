@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="icon.png" alt="ProGrad">
+            <h4><a href="index.html">ProGrad</a></h4>
+        </div>
+
+        <div class="navcontainer">
+            <div class="hidelang">
+                <input list="lang" placeholder="English" name="lang" id="language" onsubmit="return getlang()"
+                    onchange="return getlang()">
+                <datalist id="lang">
+
+                </datalist>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+
+
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="popular.html">Popular</a></li>
+                        <li><a href="upcomming.html">Upcomming</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="moviedetail ">
+      
+      
+            <h1 class="movietitle"></h1>
+            <p class="overview"></p>
+            <p class="genres"></p>
+
+            <p class="runtime"></p>
+            <p class="language"></p>
+           
+           
+     
+    </main>
+
+
+    <button id="scrolltotop" onclick="scrolltotop()">Go to Top </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/moviedetails.js"></script>
+
+
+
+</body>
+
+</html>

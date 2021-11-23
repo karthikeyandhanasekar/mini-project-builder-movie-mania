@@ -1,5 +1,27 @@
 const apikey = "2debe0f00b477f3d87075013e384ea67";
 const pages = 10
+
+
+document.querySelector("main").onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.querySelector("main").scrollTop > 600) {
+
+        document.querySelector("#scrolltotop").style.display = "block";
+    } else {
+        document.querySelector("#scrolltotop").style.display = "none";
+    }
+}
+
+const scrolltotop = () => {
+    document.querySelector("main").scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+
+}
+
 const getlanguages = async () => {
     try {
 
@@ -31,7 +53,9 @@ const getlang = async () => {
 
             const api = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&page=${index}`)
             const data = await api.data.results
+
             const filterdata = data.filter(ele => ele.original_language === lang)
+
             filterdata.forEach(element => {
                 document.querySelector("main").innerHTML += generateblock(
                     {
@@ -45,6 +69,9 @@ const getlang = async () => {
                     }
                 )
             });
+        }
+        if (document.querySelector("main").innerHTML === "") {
+            document.querySelector("main").innerHTML = "<h1 class='notfound'>Sorry for the Inconvience.</h1>"
         }
 
     } catch (error) {
@@ -69,9 +96,8 @@ const generateblock = ({ title, releaseat, imgsrc, like, view, id }) => {
 const moviedetail = async (id) => {
 
     try {
-        console.log(id);
         window.open(`../pages/moviedetails.html?movieid=${id}`)
-    } catch (error) {   
+    } catch (error) {
         console.log(error);
     }
 }
@@ -117,3 +143,45 @@ title: "The Dark Knight"
 video: false
 vote_average: 8.5
 vote_count: 26233*/
+
+
+const searchmovie = async () => {
+    try {
+        document.querySelector("main").innerHTML = ""
+        console.log(document.querySelector("#search").value);
+        const keyword = document.querySelector("#search").value.trim().split(" ").join("-")
+        console.log(keyword);
+        if (keyword === '') {
+            location.reload(true)
+        }
+        for (let index = 1; index <= pages; ++index) {
+            console.log(`https://api.themoviedb.org/3/search/multi?api_key=2debe0f00b477f3d87075013e384ea67&query=${keyword}&page=${index}`);
+            const api = await axios.get(`https://api.themoviedb.org/3/search/multi?api_key=2debe0f00b477f3d87075013e384ea67&query=${keyword}&page=${index}`)
+            const data = api.data.results
+            if (data !== []) {
+
+                data.forEach(element => {
+                    if (element.title) {
+                        document.querySelector("main").innerHTML += generateblock(
+                            {
+                                title: element.title,
+                                releaseat: element.release_date,
+                                id: element.id,
+                                imgsrc: element.backdrop_path,
+                                like: element.vote_average,
+                                view: element.vote_count
+
+                            }
+                        )
+                    }
+                });
+            }
+
+        }
+    } catch (error) {
+        console.log(error);
+
+    }
+
+}
+

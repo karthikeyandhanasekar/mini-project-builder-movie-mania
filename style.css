@@ -7,6 +7,25 @@
     color          : black;
 }
 
+#scrolltotop {
+    border-radius: 18px;
+
+    position        : fixed;
+    top             : 88%;
+    right           : 5%;
+    background-color: var(--bodycolor);
+    z-index         : 1;
+    font-size       : 1.2em;
+    padding         : 1%;
+    cursor          : pointer;
+    display: none;
+
+}
+#scrolltotop:hover
+{
+    background-color: var(--primary);
+}   
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -20,6 +39,96 @@ html {
     --bodycolor: #778898;
 }
 
+header {
+    height          : 10vh;
+    background-color: var(--primary);
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+}
+
+header div {
+    width       : 45%;
+    margin-right: 1%;
+}
+
+.logo {
+    width          : 10%;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+}
+
+header div img {
+    height: 5vh;
+}
+
+
+.searchbox {
+    flex-direction: column;
+    position      : relative;
+
+}
+
+.searchbox div {
+    width: 100%;
+}
+
+.searchinput input,
+.navcontainer div input {
+    background-color: transparent;
+    width           : inherit;
+    font-size       : 1.2em;
+    padding-left    : 5%;
+    border          : none;
+    border-bottom   : groove;
+    height          : 5vh;
+    color           : black;
+}
+
+.searchinput :placeholder-shown {
+    color: black;
+}
+
+.autocomplete {
+    padding         : 2%;
+    overflow        : auto;
+    z-index         : 1;
+    position        : absolute;
+    background-color: var(--primary);
+    height          : 60vh;
+    margin-top      : 3%;
+    display         : none;
+
+}
+
+.autocomplete li {
+    margin-bottom: 4%;
+    font-size    : 1.2em;
+    font-weight  : bold;
+}
+
+.navcontainer {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-evenly;
+}
+
+nav ul {
+    display        : flex;
+    justify-content: space-between;
+    font-size      : 1.5em;
+}
+
+.langinput {
+    width: 25%;
+}
+
+#language {
+    width: 100%;
+}
+
+/*
 header,
 header div,
 .navcontainer,
@@ -31,16 +140,17 @@ header div,
 
 }
 
-
+header div
+{
+    border: solid;
+}
 
 header {
     background-color: var(--primary);
     padding         : 1%;
 }
 
-header div img {
-    height: 5vh;
-}
+
 
 .logo {
     width: 10%;
@@ -57,7 +167,7 @@ header div img {
 
 }
 
-.navcontainer div input {
+.navcontainer div input,div input {
     font-size: 1.1em;
 
     width           : 12vw;
@@ -72,7 +182,11 @@ header div img {
     cursor     : pointer;
 
 }
-
+div input
+{
+    width: inherit;
+}
+*/
 
 main {
     background-color     : var(--bodycolor);
@@ -95,6 +209,7 @@ main div {
     cursor          : pointer;
 
 }
+
 
 .title {
     font-size : 2em;
@@ -135,21 +250,15 @@ main div img {
 
 .moviedetail {
     display: flex;
+    flex-direction: column;
+    border: solid;
+    margin: 1%;
 }
 
 .poster {
     background-color: transparent;
     display         : flex;
     justify-content : center;
-}
-
-.details {
-    width       : 80%;
-    padding     : 2%;
-    text-align  : justify;
-    line-height : 2em;
-    word-spacing: 1em;
-    overflow: scroll;
 }
 
 .movietitle {
@@ -161,7 +270,7 @@ main div img {
 }
 
 .moviedetail p {
-    margin-bottom: 2%;
+    
     font-size    : 1.5em;
 }
 
@@ -171,4 +280,19 @@ main div img {
 
 .navcontainer div nav ul li :visited {
     border: solid red;
+}
+.notfound
+{
+    width: 95vw;
+    text-align: center;
+    font-size: 5vw;
+    height: fit-content;
+    position: absolute;
+    top: 40%;
+    color: white;
+}
+.video
+{
+    margin-bottom: 5%;
+    background-color: transparent;
 }

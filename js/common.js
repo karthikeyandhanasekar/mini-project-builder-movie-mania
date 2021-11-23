@@ -96,7 +96,7 @@ const generateblock = ({ title, releaseat, imgsrc, like, view, id }) => {
 const moviedetail = async (id) => {
 
     try {
-        window.open(`../pages/moviedetails.html?movieid=${id}`)
+        window.location.href=`../pages/moviedetails.html?movieid=${id}`
     } catch (error) {
         console.log(error);
     }
